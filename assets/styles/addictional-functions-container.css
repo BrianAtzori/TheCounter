@@ -1,0 +1,48 @@
+.addictional-functions-container{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  width: 90%;
+  padding-bottom: 45px;
+}
+
+.multipliers-container{
+  display: flex;
+  justify-content: space-around;
+  flex-direction: row;
+  align-items: center;
+  background-color: #333333;
+  border-radius: 20px;
+  width: 30%;
+  height: 200px;
+  border: 1px solid #F2F2F1;
+  box-shadow: 5px 10px;
+  font-size: 40px;
+}
+
+.multiplier{
+
+}
+
+.button-ten, .button-hundred, .button-thousand{
+  background-color: transparent;
+  color: #F2F2F1;
+  width: 25%;
+  height: 60%;
+  font-size: 30px;
+  border: 1px solid #F2F2F1;
+}
+
+.saved-numbers-container{
+  display: flex;
+  justify-content: space-around;
+  flex-direction: column;
+  align-items: center;
+  background-color: #333333;
+  border-radius: 20px;
+  width: 30%;
+  height: 200px;
+  border: 1px solid #F2F2F1;
+  box-shadow: 5px 10px;
+  font-size: 40px;
+}

@@ -7,9 +7,21 @@
 
     <meta name="viewport" content="width=device-width.initialscale=1.0"/>
 
-    <title> Calculator For Cool Guys</title>
+    <title> The Counter | - + </title>
 
     <link rel="stylesheet" href="assets/styles/general-style.css"/>
+
+    <link rel="stylesheet" href="assets/styles/header.css"/>
+
+    <link rel="stylesheet" href="assets/styles/counter.css"/>
+
+    <link rel="stylesheet" href="assets/styles/addictional-functions-container.css"/>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Oxanium&display=swap" rel="stylesheet">
 
   </head>
 
@@ -19,9 +31,13 @@
 
       <header class="page-header">
 
-        <img src="assets/images/TheCounterLogo.svg"/>
+        <img class="the-counter-logo" src="assets/images/TheCounterLogo.svg"/>
 
-        <h1> The Counter, il tuo pratico contatore online. </h1>
+        <div class="the-counter-subtitle">
+
+          <h1>Il tuo pratico contatore online.</h1>
+
+        </div>
 
       </header>
 
@@ -37,9 +53,9 @@
 
         <div class="counter-container">
 
-          <div class="displayed-number"> 0000 </div>
-
           <button class="minus-sign"> - </button>
+
+          <div class="displayed-number"> 0000 </div>
 
           <button class="plus-sign"> + </button>
 
@@ -61,9 +77,9 @@
 
           <button class="multiplier button-ten">x10</button>
 
-          <button class="multiplier button-hundred">x10</button>
+          <button class="multiplier button-hundred">x100</button>
 
-          <button class="multiplier button-thousand">x10</button>
+          <button class="multiplier button-thousand">x1000</button>
 
         </div>
 
@@ -71,7 +87,25 @@
 
           <div class=single-number-saved>
 
-            <!-- TBD -->
+            <div class="saved-number-label"></div>
+
+            <div class="saved-number-value"></div>
+
+          </div>
+
+          <div class=single-number-saved>
+
+            <div class="saved-number-label"></div>
+
+            <div class="saved-number-value"></div>
+
+          </div>
+
+          <div class=single-number-saved>
+
+            <div class="saved-number-label"></div>
+
+            <div class="saved-number-value"></div>
 
           </div>
 
@@ -79,13 +113,13 @@
 
       </div>
 
+      <footer class="page-footer">
+
+        INSERIRE FOOTER QUI
+
+      </footer>
+
     </div>
-
-    <footer>
-
-      Inserire Footer qui
-
-    </footer>
 
     <script src="assets/scripts/app.js">
 

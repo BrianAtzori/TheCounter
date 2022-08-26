@@ -34,8 +34,8 @@ h1{
   justify-content: space-around;
   align-self: center;
   align-items: center;
-  /*background-color: red;*/
-  padding-top: 45px;
+  background-color: red;
+  padding-top: 20px;
 }
 
 .page-footer{
@@ -52,31 +52,30 @@ h1{
 
 .counter-main-container{
   display: flex;
-  flex-direction: row;
-  justify-content: space-between;
+  flex-direction: column;
+  justify-content: space-around;
   align-self: center;
   align-items: center;
   height: 100%;
   width: 90%;
   padding-bottom: 45px;
+  background-color: black;
 }
 
 
 /* Mobile */
 @media only screen and (max-width: 450px) {
 
+
 }
 
 /* Tablet Styles */
 @media only screen and (min-width: 451px) and (max-width: 960px) {
 
-
-
 }
 
 /* Desktop Styles */
 @media only screen and (min-width: 961px) {
-
 
 
 }
@@ -89,5 +88,7 @@ h1{
 
 /* 4K */
 @media only screen and (min-width: 2560px) {
+
+
 
 }

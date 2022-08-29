@@ -5,10 +5,11 @@
   align-items: center;
   background-color:#333333;
   border-radius: 20px;
-  width: 30%;
+  width: 85%;
   height: 100px;
   border: 1px solid #F2F2F1;
   box-shadow: 5px 10px;
+  margin-bottom: 20px;
 }
 
 .counter-container{
@@ -18,11 +19,12 @@
   align-items: center;
   background-color: #333333;
   border-radius: 20px;
-  width: 30%;
+  width: 85%;
   height: 200px;
   border: 1px solid #F2F2F1;
   box-shadow: 5px 10px;
   font-size: 40px;
+  margin-bottom: 20px;
 }
 
 .minus-sign, .plus-sign{
@@ -44,13 +46,103 @@
   flex-direction: column;
   background-color:#333333;
   border-radius: 20px;
-  width: 30%;
+  width: 85%;
   height: 100px;
   border: 1px solid #F2F2F1;
   box-shadow: 5px 10px;
+  margin-bottom: 20px;
 }
 
 .save-value-button, .enter-starting-value-button{
-  width: 40%;
+  width: 55%;
   border-radius: 10px;
+}
+
+/* Mobile */
+@media only screen and (max-width: 450px) {
+
+
+}
+
+/* Tablet Styles */
+@media only screen and (min-width: 451px) and (max-width: 960px) {
+
+  .starting-value-container{
+    width: 60%;
+    height: 100px;
+    margin-bottom: 30px;
+  }
+
+  .counter-container{
+    width: 60%;
+    height: 200px;
+    margin-bottom: 30px;
+  }
+
+  .save-button-container{
+    width: 60%;
+    height: 100px;
+    margin-bottom: 30px;
+  }
+
+}
+
+/* Desktop Styles */
+@media only screen and (min-width: 961px) {
+
+  .starting-value-container{
+    width: 25%;
+    height: 100px;
+  }
+
+  .counter-container{
+    width: 40%;
+    height: 200px;
+  }
+
+  .save-button-container{
+    width: 25%;
+    height: 100px;
+  }
+
+
+}
+
+@media only screen and (min-width: 1440px) {
+
+  .starting-value-container{
+    width: 20%;
+    height: 100px;
+  }
+
+  .counter-container{
+    width: 35%;
+    height: 200px;
+  }
+
+  .save-button-container{
+    width: 20%;
+    height: 100px;
+  }
+
+}
+
+/* 4K */
+@media only screen and (min-width: 2560px) {
+
+  .starting-value-container{
+    width: 20%;
+    height: 200px;
+  }
+
+  .counter-container{
+    width: 35%;
+    height: 350px;
+  }
+
+  .save-button-container{
+    width: 20%;
+    height: 200px;
+  }
+
 }

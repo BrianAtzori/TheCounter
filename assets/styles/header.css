@@ -6,7 +6,7 @@
   align-items: center;
   width: 90%;
   margin: 45px;
-  background-color: blue;
+  /*background-color: blue;*/
 }
 
 .the-counter-subtitle{
@@ -17,9 +17,9 @@
   border-radius: 20px;
   border: 1px solid #333333;
   box-shadow: 5px 10px;
-  margin-top: 45px;
-  height: 40px;
-  width: 40%;
+  margin-top: 20px;
+  height: 20px;
+  width: 70%;
 }
 
 .the-counter-logo{
@@ -34,6 +34,10 @@
 /* Tablet Styles */
 @media only screen and (min-width: 451px) and (max-width: 960px) {
 
+  .the-counter-subtitle{
+    height: 25px;
+    width: 50%;
+  }
 
 }
 
@@ -41,7 +45,12 @@
 @media only screen and (min-width: 961px) {
 
   .the-counter-logo{
-    width: 60%;
+    width: 50%;
+  }
+
+  .the-counter-subtitle{
+    height: 25px;
+    width: 30%;
   }
 
 
@@ -49,11 +58,28 @@
 
 @media only screen and (min-width: 1440px) {
 
+  .the-counter-logo{
+    width: 50%;
+  }
+
+  .the-counter-subtitle{
+    height: 25px;
+    width: 25%;
+  }
 
 
 }
 
 /* 4K */
 @media only screen and (min-width: 2560px) {
+
+  .the-counter-logo{
+    width: 40%;
+  }
+
+  .the-counter-subtitle{
+    height: 25px;
+    width: 20%;
+  }
 
 }

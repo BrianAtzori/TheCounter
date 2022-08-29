@@ -25,7 +25,7 @@ input{
 }
 
 h1{
-  font-size: 20px;
+  font-size: 12px;
 }
 
 .page-content{
@@ -34,7 +34,7 @@ h1{
   justify-content: space-around;
   align-self: center;
   align-items: center;
-  background-color: red;
+  /*background-color: red;*/
   padding-top: 20px;
 }
 
@@ -59,7 +59,16 @@ h1{
   height: 100%;
   width: 90%;
   padding-bottom: 45px;
-  background-color: black;
+  /*background-color: black;*/
+}
+
+.addictional-functions-container{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  width: 90%;
+  padding-bottom: 45px;
+  /*background-color: yellow;*/
 }
 
 
@@ -72,17 +81,38 @@ h1{
 /* Tablet Styles */
 @media only screen and (min-width: 451px) and (max-width: 960px) {
 
+  h1{
+    font-size: 16px;
+  }
+
 }
 
 /* Desktop Styles */
 @media only screen and (min-width: 961px) {
 
+  h1{
+    font-size: 16px;
+  }
+
+  .counter-main-container{
+    display: flex;
+    flex-direction: row;
+    /*background-color: black;*/
+  }
+
+  .addictional-functions-container{
+    display: flex;
+    flex-direction: row;
+    /*background-color: yellow;*/
+  }
 
 }
 
 @media only screen and (min-width: 1440px) {
 
-
+  h1{
+    font-size: 18px;
+  }
 
 }
 

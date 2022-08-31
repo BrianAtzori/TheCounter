@@ -24,6 +24,10 @@
   border: 1px solid #F2F2F1;
 }
 
+.multiplier-selected{
+  color: #5ce1e6;
+}
+
 .saved-numbers-container{
   display: flex;
   justify-content: space-around;

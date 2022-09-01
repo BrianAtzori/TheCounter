@@ -93,6 +93,7 @@ class Counter{
         thousandMultiplier.classList.remove("multiplier-selected");
 
       }
+
       else{
 
         this.multiplier = 1000

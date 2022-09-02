@@ -45,6 +45,22 @@
   margin-bottom: 20px;
 }
 
+.saved-value
+{
+  display:flex;
+  justify-content: space-around;
+  align-items: center;
+  width: 80%;
+  height: 20%;
+  background-color: #F2F2F1;
+  border-radius: 20px;
+  border: 1px solid  #F2F2F1;
+  box-shadow: 5px 10px;
+  color: #333333;
+  font-size: 30px;
+  text-align: center;
+}
+
 /* Mobile */
 @media only screen and (max-width: 450px) {
 
@@ -96,6 +112,11 @@
     margin-bottom: 20px;
   }
 
+  .saved-value
+  {
+    width: 60%;
+    font-size: 25px;
+  }
 
 }
 

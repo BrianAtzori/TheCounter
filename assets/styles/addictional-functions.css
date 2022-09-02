@@ -28,6 +28,12 @@
   color: #5ce1e6;
 }
 
+.multiplier-guide{
+  margin-top: 20px;
+  font-size: 20px;
+  text-align: center;
+}
+
 .saved-numbers-container{
   display: flex;
   justify-content: space-around;

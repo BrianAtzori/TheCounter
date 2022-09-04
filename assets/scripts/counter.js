@@ -147,8 +147,6 @@ const counter = new Counter (displayedNumber.innerHTML, 1)
 
 //--------EVENTS------------------------------------------------
 
-//Verificare OnClick VS Touch
-
 minusSign.addEventListener('click', button => {
 
   counter.modifyValue(minusSign.innerHTML, displayedNumber.innerHTML)

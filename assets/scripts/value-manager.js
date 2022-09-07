@@ -26,7 +26,6 @@ class ValueManager{
     this.savedNumbersCounter++
 
     return newDiv
-
   }
 
   saveValue(currentNumber,label){

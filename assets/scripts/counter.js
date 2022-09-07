@@ -122,6 +122,24 @@ class Counter{
   {
     displayedNumber.innerHTML=this.currentNumber.toString()
   }
+}
+
+class GuiManager {
+
+  constructor(){
+
+  }
+
+  generateGui(parent, tagName, styleName, content)
+  {
+    const generatedElement=document.createElement(tagName)
+
+    generatedElement.classList.add(styleName)
+
+    generatedElement.innerHTML = (content)
+
+    parent.appendChild(generatedElement)
+  }
 
 }
 
@@ -129,11 +147,29 @@ class Counter{
 //--------GETELEMENTS-----------------------------------------------
 
 
+//Counter GUI GENERATION
+
+const counterContainer = document.querySelector('.counter-container')
+
+const guiManager = new GuiManager()
+
+guiManager.generateGui(counterContainer, 'button', 'minus-sign', '-')
+
+guiManager.generateGui(counterContainer, 'div', 'displayed-number', '0')
+
+guiManager.generateGui(counterContainer, 'button', 'plus-sign', '+')
+
+
+//Counter GUI Initialization
+
 const minusSign = document.querySelector('.minus-sign')
 
 const displayedNumber = document.querySelector('.displayed-number')
 
 const plusSign = document.querySelector('.plus-sign')
+
+
+//Multipliers Initialization
 
 const tenMultiplier = document.querySelector('.button-ten')
 
@@ -141,6 +177,8 @@ const hundredMultiplier = document.querySelector('.button-hundred')
 
 const thousandMultiplier = document.querySelector('.button-thousand')
 
+
+//Counter Initialization
 
 const counter = new Counter (displayedNumber.innerHTML, 1)
 

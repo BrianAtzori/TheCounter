@@ -171,6 +171,8 @@ const plusSign = document.querySelector('.plus-sign')
 
 //Multipliers Initialization
 
+const multipliersContainer = document.querySelector('.multipliers-container')
+
 const tenMultiplier = document.querySelector('.button-ten')
 
 const hundredMultiplier = document.querySelector('.button-hundred')
@@ -185,7 +187,40 @@ const counter = new Counter (displayedNumber.innerHTML, 1)
 
 //--------EVENTS------------------------------------------------
 
-minusSign.addEventListener('click', button => {
+counterContainer.addEventListener('click', function(event){
+  
+  const targetClicked = event.target
+
+  if(targetClicked === minusSign){
+    counter.modifyValue(minusSign.innerHTML, displayedNumber.innerHTML)
+    counter.modifyDisplayedNumber() 
+  }
+  else if (targetClicked === plusSign)
+  {
+    counter.modifyValue(plusSign.innerHTML, displayedNumber.innerHTML)
+    counter.modifyDisplayedNumber() 
+  }
+})
+
+multipliersContainer.addEventListener('click', function(event){
+  
+  const targetClicked = event.target
+
+  if(targetClicked === tenMultiplier){
+    counter.multiplierManager(tenMultiplier.innerHTML)
+  }
+  else if (targetClicked === hundredMultiplier)
+  {
+    counter.multiplierManager(hundredMultiplier.innerHTML)
+  }
+  else if (targetClicked === thousandMultiplier)
+  {
+    counter.multiplierManager(thousandMultiplier.innerHTML)
+  }
+
+})
+
+/*minusSign.addEventListener('click', button => {
 
   counter.modifyValue(minusSign.innerHTML, displayedNumber.innerHTML)
   counter.modifyDisplayedNumber()
@@ -197,9 +232,9 @@ plusSign.addEventListener('click', button => {
   counter.modifyValue(plusSign.innerHTML, displayedNumber.innerHTML)
   counter.modifyDisplayedNumber()
 
-});
+});*/
 
-tenMultiplier.addEventListener('click', button => {
+/*tenMultiplier.addEventListener('click', button => {
 
   counter.multiplierManager(tenMultiplier.innerHTML)
 
@@ -216,4 +251,4 @@ thousandMultiplier.addEventListener('click', button => {
 
   counter.multiplierManager(thousandMultiplier.innerHTML)
 
-});
+});*/

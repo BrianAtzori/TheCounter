@@ -6,19 +6,26 @@ class Counter{
   // Counter class - Used to decrease or increase the displayed value, even with multipliers
 
   constructor(currentNumberDisplayed,multiplierSelected){
+    
     this.currentNumberDisplayed = parseFloat(currentNumberDisplayed)
+   
     this.multiplierSelected = multiplierSelected
+  
   }
 
   modifyValue(operatorSelected,currentNumberDisplayed){
 
     if(operatorSelected === '+')
     {
+
       this.currentNumberDisplayed = (parseFloat(currentNumberDisplayed) + (1 * this.multiplierSelected))
+
     }
     else
     {
+
       this.currentNumberDisplayed = (parseFloat(currentNumberDisplayed) - (1 * this.multiplierSelected))
+
     }
 
   }
@@ -29,84 +36,45 @@ class Counter{
 
       case 'x10':
 
-        if(this.multiplierSelected==10){
+          const isActivatingTen = (this.multiplierSelected!==10);
 
-          this.multiplierSelected = 1
+          this.multiplierSelected = isActivatingTen ? 10: 1;
 
-          buttonHundredMultiplier.disabled = false
+          buttonHundredMultiplier.disabled = isActivatingTen
 
-          buttonThousandMultiplier.disabled = false
+          buttonThousandMultiplier.disabled = isActivatingTen
 
-          buttonTenMultiplier.classList.remove("multiplier-selected");
+          buttonTenMultiplier.classList.toggle("multiplier-selected", isActivatingTen);
 
-        }
-        else{
-
-          this.multiplierSelected = 10
-
-          buttonHundredMultiplier.disabled = true
-
-          buttonThousandMultiplier.disabled = true
-
-          buttonTenMultiplier.classList.add("multiplier-selected")
-
-        }
-
-      break
+      break;
 
       case 'x100':
 
-      if(this.multiplierSelected==100){
+          const isActivatingHundred = (this.multiplierSelected!==100);
 
-        this.multiplierSelected = 1
+          this.multiplierSelected = isActivatingHundred ? 100: 1;
 
-        buttonTenMultiplier.disabled = false
+          buttonThousandMultiplier.disabled = isActivatingHundred
 
-        buttonThousandMultiplier.disabled = false
+          buttonTenMultiplier.disabled = isActivatingHundred
 
-        buttonHundredMultiplier.classList.remove("multiplier-selected");
+          buttonHundredMultiplier.classList.toggle("multiplier-selected", isActivatingHundred);
 
-      }
-      else{
-
-        this.multiplierSelected = 100
-
-        buttonTenMultiplier.disabled = true
-
-        buttonThousandMultiplier.disabled = true
-
-        buttonHundredMultiplier.classList.add("multiplier-selected")
-
-      }
-      break
+      break;
 
       case 'x1000':
 
-      if(this.multiplierSelected==1000){
+          const isActivatingThousand = (this.multiplierSelected!==1000);
 
-        this.multiplierSelected = 1
+          this.multiplierSelected = isActivatingThousand ? 1000: 1;
 
-        buttonTenMultiplier.disabled = false
+          buttonTenMultiplier.disabled = isActivatingThousand
 
-        buttonHundredMultiplier.disabled = false
+          buttonHundredMultiplier.disabled = isActivatingThousand
 
-        buttonThousandMultiplier.classList.remove("multiplier-selected");
+          buttonThousandMultiplier.classList.toggle("multiplier-selected", isActivatingThousand);
 
-      }
-
-      else{
-
-        this.multiplierSelected = 1000
-
-        buttonTenMultiplier.disabled = true
-
-        buttonHundredMultiplier.disabled = true
-
-        buttonThousandMultiplier.classList.add("multiplier-selected")
-
-      }
-
-      break
+      break;
 
       default:
 

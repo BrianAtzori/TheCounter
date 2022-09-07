@@ -9,15 +9,15 @@ class ValueManager{
 
   }
 
-  setValue(startingValue)
+  setDisplayedValue(startingValue)
   {
     //Set starting value and "restart" input area
-    displayedNumber.innerHTML = startingValue
+    divDisplayedNumber.innerHTML = startingValue
 
-    startingValueInput.value = "0"
+    inputStartingValue.value = "0"
   }
 
-  createNewSVContainer()
+  createNewSavedValueContainer()
   {
     const newDiv=document.createElement("div")
 
@@ -28,32 +28,32 @@ class ValueManager{
     return newDiv
   }
 
-  saveValue(currentNumber,label){
+  saveValue(currentDisplayedNumber, valueLabel){
 
     if(this.savedNumbersCounter>=1)
     {
 
-      savedValuesContainer.removeChild(savedValuesContainer.firstChild)
+      divContainerSavedValues.removeChild(divContainerSavedValues.firstChild)
 
-      const newSavedValueContainer=this.createNewSVContainer()
+      const divNewSavedValueContainer=this.createNewSavedValueContainer()
 
-      newSavedValueContainer.innerHTML = (label + ": " + currentNumber)
+      divNewSavedValueContainer.innerHTML = (valueLabel + ": " + currentDisplayedNumber)
 
-      savedValuesContainer.appendChild(newSavedValueContainer)
+      divContainerSavedValues.appendChild(divNewSavedValueContainer)
 
-      valueToSaveLabel.value=""
+      inputValueToSaveLabel.value=""
 
     }
 
     else{
 
-      const newSavedValueContainer=this.createNewSVContainer()
+      const newSavedValueContainer=this.createNewSavedValueContainer()
 
-      newSavedValueContainer.innerHTML = (label + ": " + currentNumber)
+      newSavedValueContainer.innerHTML = (valueLabel + ": " + currentDisplayedNumber)
 
-      savedValuesContainer.appendChild(newSavedValueContainer)
+      divContainerSavedValues.appendChild(newSavedValueContainer)
 
-      valueToSaveLabel.value=""
+      inputValueToSaveLabel.value=""
 
     }
 
@@ -65,25 +65,22 @@ class ValueManager{
 //--------GETELEMENTS-----------------------------------------------
 
 
-const currentNumber = document.querySelector('.displayed-number')
-
-
 //Starting Value MGMT
 
-const startingValueInput = document.querySelector('.starting-value-input')
+const inputStartingValue = document.querySelector('.starting-value-input')
 
-const startingValueButton = document.querySelector('.enter-starting-value-button')
+const buttonStartingValue = document.querySelector('.enter-starting-value-button')
 
 
 //Value to save MGMT
 
-const valueToSaveLabel = document.querySelector('.saved-value-label')
+const inputValueToSaveLabel = document.querySelector('.saved-value-label')
 
-const saveValueButton = document.querySelector('.save-value-button')
+const buttonSaveValue = document.querySelector('.save-value-button')
 
-const savedValuePlaceholder = document.querySelector('#savedValuePlaceholder')
+const placeholderSavedValue = document.querySelector('#savedValuePlaceholder')
 
-const savedValuesContainer = document.querySelector('.saved-numbers-container')
+const divContainerSavedValues = document.querySelector('.saved-numbers-container')
 
 
 //Class declaration
@@ -94,27 +91,27 @@ const valueManager = new ValueManager()
 //--------EVENTS------------------------------------------------
 
 
-startingValueButton.addEventListener('click', button => {
+buttonStartingValue.addEventListener('click', button => {
 
-  valueManager.setValue(startingValueInput.value)
+  valueManager.setDisplayedValue(inputStartingValue.value)
 
 })
 
-saveValueButton.addEventListener('click', button => {
+buttonSaveValue.addEventListener('click', button => {
 
     //Check if not first time saving
 
-    if(savedValuesContainer.contains(savedValuePlaceholder))
+    if(divContainerSavedValues.contains(placeholderSavedValue))
     {
 
-      savedValuesContainer.removeChild(savedValuePlaceholder)
+      divContainerSavedValues.removeChild(placeholderSavedValue)
 
-      valueManager.saveValue(currentNumber.innerHTML,valueToSaveLabel.value)
+      valueManager.saveValue(divDisplayedNumber.innerHTML,inputValueToSaveLabel.value)
 
     }
     else {
 
-      valueManager.saveValue(currentNumber.innerHTML,valueToSaveLabel.value)
+      valueManager.saveValue(divDisplayedNumber.innerHTML,inputValueToSaveLabel.value)
 
     }
 

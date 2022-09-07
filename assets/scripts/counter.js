@@ -5,50 +5,50 @@ class Counter{
 
   // Counter class - Used to decrease or increase the displayed value, even with multipliers
 
-  constructor(currentNumber,multiplier){
-    this.currentNumber = parseFloat(currentNumber)
-    this.multiplier = 1
+  constructor(currentNumberDisplayed,multiplierSelected){
+    this.currentNumberDisplayed = parseFloat(currentNumberDisplayed)
+    this.multiplierSelected = multiplierSelected
   }
 
-  modifyValue(operator,currentNumber){
+  modifyValue(operatorSelected,currentNumberDisplayed){
 
-    if(operator === '+')
+    if(operatorSelected === '+')
     {
-      this.currentNumber = (parseFloat(currentNumber) + (1 * this.multiplier))
+      this.currentNumberDisplayed = (parseFloat(currentNumberDisplayed) + (1 * this.multiplierSelected))
     }
     else
     {
-      this.currentNumber = (parseFloat(currentNumber) - (1 * this.multiplier))
+      this.currentNumberDisplayed = (parseFloat(currentNumberDisplayed) - (1 * this.multiplierSelected))
     }
 
   }
 
-  multiplierManager(selectedMultiplier){
+  multiplierManager(multiplierSelected){
 
-    switch (selectedMultiplier){
+    switch (multiplierSelected){
 
       case 'x10':
 
-        if(this.multiplier==10){
+        if(this.multiplierSelected==10){
 
-          this.multiplier = 1
+          this.multiplierSelected = 1
 
-          hundredMultiplier.disabled = false
+          buttonHundredMultiplier.disabled = false
 
-          thousandMultiplier.disabled = false
+          buttonThousandMultiplier.disabled = false
 
-          tenMultiplier.classList.remove("multiplier-selected");
+          buttonTenMultiplier.classList.remove("multiplier-selected");
 
         }
         else{
 
-          this.multiplier = 10
+          this.multiplierSelected = 10
 
-          hundredMultiplier.disabled = true
+          buttonHundredMultiplier.disabled = true
 
-          thousandMultiplier.disabled = true
+          buttonThousandMultiplier.disabled = true
 
-          tenMultiplier.classList.add("multiplier-selected")
+          buttonTenMultiplier.classList.add("multiplier-selected")
 
         }
 
@@ -56,53 +56,53 @@ class Counter{
 
       case 'x100':
 
-      if(this.multiplier==100){
+      if(this.multiplierSelected==100){
 
-        this.multiplier = 1
+        this.multiplierSelected = 1
 
-        tenMultiplier.disabled = false
+        buttonTenMultiplier.disabled = false
 
-        thousandMultiplier.disabled = false
+        buttonThousandMultiplier.disabled = false
 
-        hundredMultiplier.classList.remove("multiplier-selected");
+        buttonHundredMultiplier.classList.remove("multiplier-selected");
 
       }
       else{
 
-        this.multiplier = 100
+        this.multiplierSelected = 100
 
-        tenMultiplier.disabled = true
+        buttonTenMultiplier.disabled = true
 
-        thousandMultiplier.disabled = true
+        buttonThousandMultiplier.disabled = true
 
-        hundredMultiplier.classList.add("multiplier-selected")
+        buttonHundredMultiplier.classList.add("multiplier-selected")
 
       }
       break
 
       case 'x1000':
 
-      if(this.multiplier==1000){
+      if(this.multiplierSelected==1000){
 
-        this.multiplier = 1
+        this.multiplierSelected = 1
 
-        tenMultiplier.disabled = false
+        buttonTenMultiplier.disabled = false
 
-        hundredMultiplier.disabled = false
+        buttonHundredMultiplier.disabled = false
 
-        thousandMultiplier.classList.remove("multiplier-selected");
+        buttonThousandMultiplier.classList.remove("multiplier-selected");
 
       }
 
       else{
 
-        this.multiplier = 1000
+        this.multiplierSelected = 1000
 
-        tenMultiplier.disabled = true
+        buttonTenMultiplier.disabled = true
 
-        hundredMultiplier.disabled = true
+        buttonHundredMultiplier.disabled = true
 
-        thousandMultiplier.classList.add("multiplier-selected")
+        buttonThousandMultiplier.classList.add("multiplier-selected")
 
       }
 
@@ -110,7 +110,7 @@ class Counter{
 
       default:
 
-        this.multiplier = 1
+        this.multiplierSelected = 1
 
       break
 
@@ -120,7 +120,7 @@ class Counter{
 
   modifyDisplayedNumber()
   {
-    displayedNumber.innerHTML=this.currentNumber.toString()
+    divDisplayedNumber.innerHTML=this.currentNumberDisplayed.toString()
   }
 }
 
@@ -162,27 +162,27 @@ guiManager.generateGui(counterContainer, 'button', 'plus-sign', '+')
 
 //Counter GUI Initialization
 
-const minusSign = document.querySelector('.minus-sign')
+const buttonMinus = document.querySelector('.minus-sign')
 
-const displayedNumber = document.querySelector('.displayed-number')
+const divDisplayedNumber = document.querySelector('.displayed-number')
 
-const plusSign = document.querySelector('.plus-sign')
+const buttonPlus = document.querySelector('.plus-sign')
 
 
 //Multipliers Initialization
 
-const multipliersContainer = document.querySelector('.multipliers-container')
+const divMultipliersContainer = document.querySelector('.multipliers-container')
 
-const tenMultiplier = document.querySelector('.button-ten')
+const buttonTenMultiplier = document.querySelector('.button-ten')
 
-const hundredMultiplier = document.querySelector('.button-hundred')
+const buttonHundredMultiplier = document.querySelector('.button-hundred')
 
-const thousandMultiplier = document.querySelector('.button-thousand')
+const buttonThousandMultiplier = document.querySelector('.button-thousand')
 
 
 //Counter Initialization
 
-const counter = new Counter (displayedNumber.innerHTML, 1)
+const counter = new Counter (divDisplayedNumber.innerHTML, 1)
 
 
 //--------EVENTS------------------------------------------------
@@ -191,31 +191,31 @@ counterContainer.addEventListener('click', function(event){
   
   const targetClicked = event.target
 
-  if(targetClicked === minusSign){
-    counter.modifyValue(minusSign.innerHTML, displayedNumber.innerHTML)
+  if(targetClicked === buttonMinus){
+    counter.modifyValue(buttonMinus.innerHTML, divDisplayedNumber.innerHTML)
     counter.modifyDisplayedNumber() 
   }
-  else if (targetClicked === plusSign)
+  else if (targetClicked === buttonPlus)
   {
-    counter.modifyValue(plusSign.innerHTML, displayedNumber.innerHTML)
+    counter.modifyValue(buttonPlus.innerHTML, divDisplayedNumber.innerHTML)
     counter.modifyDisplayedNumber() 
   }
 })
 
-multipliersContainer.addEventListener('click', function(event){
+divMultipliersContainer.addEventListener('click', function(event){
   
   const targetClicked = event.target
 
-  if(targetClicked === tenMultiplier){
-    counter.multiplierManager(tenMultiplier.innerHTML)
+  if(targetClicked === buttonTenMultiplier){
+    counter.multiplierManager(buttonTenMultiplier.innerHTML)
   }
-  else if (targetClicked === hundredMultiplier)
+  else if (targetClicked === buttonHundredMultiplier)
   {
-    counter.multiplierManager(hundredMultiplier.innerHTML)
+    counter.multiplierManager(buttonHundredMultiplier.innerHTML)
   }
-  else if (targetClicked === thousandMultiplier)
+  else if (targetClicked === buttonThousandMultiplier)
   {
-    counter.multiplierManager(thousandMultiplier.innerHTML)
+    counter.multiplierManager(buttonThousandMultiplier.innerHTML)
   }
 
 })
